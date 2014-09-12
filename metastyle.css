@@ -1,0 +1,137 @@
+
+* {
+  margin:0;
+  padding:0;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+    width: 800px;
+    margin: auto;
+    background-image: url(../fondobla.jpg);
+    font: 14px/24px 'Lato', sans-serif;
+    font-size: 1em; 
+    line-height: 1.4;
+    color: #424242;
+}
+
+p{clear:both;}
+
+h1 {
+  color:#fff;
+  background:#e3af20;
+  padding: 10px;
+  text-align: center;
+  font-size:2em;
+  -webkit-border-bottom-right-radius: 10px;
+  -webkit-border-bottom-left-radius: 10px;
+  -moz-border-radius-bottomright: 10px;
+  -moz-border-radius-bottomleft: 10px;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+h2 { 
+   font-size:1.6em;
+   margin: 20px 0 10px;
+   padding: 0 15px 0 5px;
+   display: inline-block;
+   background-color: #fff;
+   letter-spacing: 1px;
+   color: #fff;
+   background-color: #3d3d3d;
+   font-weight: 300;
+   text-transform: uppercase;
+}
+
+h3 { 
+   font-size:1.3em;
+   margin:15px 0 5px;
+   letter-spacing: 1px;
+}
+
+h4 { 
+   font-size:1.0em; 
+}
+
+h5 { 
+   font-size:0.9em; 
+}
+
+h6 { 
+   font-size:0.8em; 
+}
+
+a {
+  text-decoration: none;
+  color: #ff5817;
+}
+a:visited {
+   color: #c94326;
+}
+
+blockquote {
+   color:#666666;
+   margin:10px;
+   padding-left: 1em;
+   border-left: 0.5em #e4e0d6 solid;
+}
+
+blockquote:last-child {
+  margin-bottom: 30px;
+}
+
+@media print {
+   * { 
+      background: transparent !important; 
+      color: black !important; 
+      filter:none !important; 
+      -ms-filter: none !important; 
+   }
+
+   body { 
+      font-size:12pt; 
+      max-width:100%; 
+   }
+       
+   a, a:visited { 
+      text-decoration: underline; 
+   }
+
+   hr { 
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote { 
+      padding-right: 1em; 
+      page-break-inside: avoid; 
+   }
+
+   tr, img { 
+      page-break-inside: avoid; 
+   }
+
+   img { 
+      max-width: 100% !important; 
+   }
+
+   @page :left { 
+      margin: 15mm 20mm 15mm 10mm; 
+   }
+     
+   @page :right { 
+      margin: 15mm 10mm 15mm 20mm; 
+   }
+
+   p, h2, h3 { 
+      orphans: 3; widows: 3; 
+   }
+
+   h2, h3 { 
+      page-break-after: avoid; 
+   }
+}

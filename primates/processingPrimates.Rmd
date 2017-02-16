@@ -1,30 +1,16 @@
----
-title: "Ejemplo de workflow manual para la generación de modelos consenso"
-author: "Jorge Velásquez y Helena Olaya"
-date: "15 de febrero de 2017"
-output: html_document
----
+#Ejemplo de workflow manual para la generación de modelos consenso
+Jorge Velásquez y Helena Olaya  
+Fecha: 15 de febrero de 2017
 
-Este es un ejemplo de procesamiento manual de los aportes recibidos en la modelatón de primates usando datos ingresados en la versión 2 de BioModelos. Los archivos relevantes a este procesamiento estan en la carpeta Z:/Modelos/2016/31102016
+Este es un ejemplo de procesamiento manual de los aportes recibidos en la modelatón de primates usando datos ingresados en la versión 2 de BioModelos. Los archivos relevantes a este procesamiento estan en la carpeta Z:/Modelos/2016/31102016 (192.168.11.113)
 
-###Cargar librerias
-```{r setup, include=TRUE,message=FALSE, warning=FALSE}
-#knitr::opts_chunk$set(echo = FALSE)
+###Cargar librerias y archivos del procesamiento
+```{r message=FALSE, warning=FALSE}
 library(raster)
 library(rgdal)
-#Función para leer archivos geojson
-geojson2shp<-function(infile){
-  shp<-readOGR(infile,"OGRGeoJSON",verbose=FALSE)
-  return(shp)
-}
-
-```
-
-###Cargar archivos del procesamiento
-```{r message=FALSE, warning=FALSE}
 sp.raster<-raster("Z:/Modelos/2016/31102016/Alouatta_seniculus_0_mx.tif") 
-sp.shp<-geojson2shp("Z:/Modelos/2016/31102016/aportes/192_Alouatta_seniculus_03112016_6_umbral0.geojson")
-poly2<-readOGR("Z:/Modelos/2016/31102016/aportes","Alouatta_seniculus_add_HO")
+sp.shp<-readOGR("Z:/Modelos/2016/31102016/aportes/192_Alouatta_seniculus_03112016_6_umbral0.geojson","OGRGeoJSON",verbose=FALSE)
+poly2<-readOGR("Z:/Modelos/2016/31102016/aportes","Alouatta_seniculus_add_HO", verbose=FALSE)
 ```
 
 El modelo escogido en la modelatón para *Alouatta seniculus* corresponde al umbral 0
@@ -78,6 +64,6 @@ sp.raster<-sp.raster*col
 plot(sp.raster)
 ```
 
-Por último se guardan los resultados `writeRaster(sp.raster, "./Consenso/Alouatta_seniculus.tif")`
+Por último se guardan los resultados usando: `writeRaster(sp.raster, "./Consenso/Alouatta_seniculus.tif")`
 
-
+###Pendiente: generación de metadatos y PNGs para despliegue en BioModelos v2.

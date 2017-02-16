@@ -1,43 +1,22 @@
----
-title: "Ejemplo de workflow manual para la generación de modelos consenso"
-author: "Jorge Velásquez y Helena Olaya"
-date: "15 de febrero de 2017"
-output: html_document
----
+#Ejemplo de workflow manual para la generación de modelos consenso
+Jorge Velásquez y Helena Olaya  
+Fecha: 15 de febrero de 2017
 
-Este es un ejemplo de procesamiento manual de los aportes recibidos en la modelatón de primates usando datos ingresados en la versión 2 de BioModelos. Los archivos relevantes a este procesamiento estan en la carpeta Z:/Modelos/2016/31102016
+Este es un ejemplo de procesamiento manual de los aportes recibidos en la modelatón de primates usando datos ingresados en la versión 2 de BioModelos. Los archivos relevantes a este procesamiento estan en la carpeta Z:/Modelos/2016/31102016 (192.168.11.113)
 
-###Cargar librerias
+###Cargar librerias y archivos del procesamiento
 
 ```r
-#knitr::opts_chunk$set(echo = FALSE)
 library(raster)
 library(rgdal)
-#Función para leer archivos geojson
-geojson2shp<-function(infile){
-  shp<-readOGR(infile,"OGRGeoJSON",verbose=FALSE)
-  return(shp)
-}
-```
-
-###Cargar archivos del procesamiento
-
-```r
 sp.raster<-raster("Z:/Modelos/2016/31102016/Alouatta_seniculus_0_mx.tif") 
-sp.shp<-geojson2shp("Z:/Modelos/2016/31102016/aportes/192_Alouatta_seniculus_03112016_6_umbral0.geojson")
-poly2<-readOGR("Z:/Modelos/2016/31102016/aportes","Alouatta_seniculus_add_HO")
-```
-
-```
-## OGR data source with driver: ESRI Shapefile 
-## Source: "Z:/Modelos/2016/31102016/aportes", layer: "Alouatta_seniculus_add_HO"
-## with 1 features
-## It has 1 fields
+sp.shp<-readOGR("Z:/Modelos/2016/31102016/aportes/192_Alouatta_seniculus_03112016_6_umbral0.geojson","OGRGeoJSON",verbose=FALSE)
+poly2<-readOGR("Z:/Modelos/2016/31102016/aportes","Alouatta_seniculus_add_HO", verbose=FALSE)
 ```
 
 El modelo escogido en la modelatón para *Alouatta seniculus* corresponde al umbral 0
 
-![plot of chunk unnamed-chunk-4](figure/unnamed-chunk-4-1.png)
+![plot of chunk unnamed-chunk-2](figure/unnamed-chunk-2-1.png)
 
 Los aportes consisten de
 
@@ -81,7 +60,7 @@ plot(sp.shp[c(1,15,16),],add=T)
 plot(poly2,add=T)
 ```
 
-![plot of chunk unnamed-chunk-6](figure/unnamed-chunk-6-1.png)
+![plot of chunk unnamed-chunk-4](figure/unnamed-chunk-4-1.png)
 
 Ahora eliminamos un área de sobrepredicción en La Guajira
 
@@ -92,7 +71,7 @@ plot(sp.raster)
 plot(sp.shp[14,], add=T)
 ```
 
-![plot of chunk unnamed-chunk-7](figure/unnamed-chunk-7-1.png)
+![plot of chunk unnamed-chunk-5](figure/unnamed-chunk-5-1.png)
 
 Luego, recortamos por el poligono de extensión de ocurrencia
 
@@ -104,7 +83,7 @@ plot(sp.raster)
 plot(sp.shp[2,], add=T)
 ```
 
-![plot of chunk unnamed-chunk-8](figure/unnamed-chunk-8-1.png)
+![plot of chunk unnamed-chunk-6](figure/unnamed-chunk-6-1.png)
 
 Finalmente, recortamos por el área continental de Colombia y obtenemos el mapa consenso final para *Alouatta seniculus*
 
@@ -115,8 +94,8 @@ sp.raster<-sp.raster*col
 plot(sp.raster)
 ```
 
-![plot of chunk unnamed-chunk-9](figure/unnamed-chunk-9-1.png)
+![plot of chunk unnamed-chunk-7](figure/unnamed-chunk-7-1.png)
 
-Por último se guardan los resultados `writeRaster(sp.raster, "./Consenso/Alouatta_seniculus.tif")`
+Por último se guardan los resultados usando: `writeRaster(sp.raster, "./Consenso/Alouatta_seniculus.tif")`
 
-
+###Pendiente: generación de metadatos y PNGs para despliegue en BioModelos v2.

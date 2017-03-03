@@ -15,8 +15,28 @@ Los siguientes archivos fueron resultado del procesamiento de alguno de los mode
 ###//192.168.11.113/Lab_biogeografia2/Modelos/Zamias/Consenso
 Modelos resultante despues de procesar los aportes disponibles en el archivo `Estado modelamiento Zamias2.xlsx` pesta√±a, Revisi√≥n final.
 
+> Modelos editados de forma manual en ArcGIS, de acuerdo al archivo //192.168.11.113/Lab_biogeografia2/Modelos/Zamias/Correos Dairon.pdf, que corresponde a la copia de los correos entre Jorge Vel·squez, Cristina LÛpez-Gallego y Dairon C·rdenas. AllÌ, Dairon sugiere las siguientes ediciones para las especies:
+
+*Zamia amazonum: cortar el modelo por la cota altitudinal de 300 m.s.n.m. Para esta especie encontramos entonces cuatro archivos:
++**Zamia_amazonum_con1.tif**: corresponde al modelo nivel 1 de la especie cortado por una cota altitudinal de 200 m.s.n.m).
++**Zamia_amazonum_con2.tif**: corresponde al modelo nivel 1 de la especie cortado por una cota altitudinal de 500 m.s.n.m).
++**Zamia_amazonum_con3.tif**: sigue la ediciÛn propuesta por Dairon C·rdenas.
+
+*Zamia hymenophyllidia: descartar la parte del modelo hacia el norte del rio Apaporis. Para esta especie encontramos entonces tres archivos:
++**Zamia_hymenophyllidia_con.tif**: corresponde al modelo nivel 1.
++**Zamia_hymenophyllidia_con2.tif**: sigue la ediciÛn propuesta por Dairon C·rdenas, utilizando la m·scara  //192.168.11.113/Lab_biogeografia2/Modelos/Zamias/rio apaporis/mask_apaporis.shp.
+
 ###//192.168.11.113/Lab_biogeografia2/Modelos/Zamias/Consenso_NA
 Modelos procesados a partir de los anteriores, en los que los 0s fueron cambiados a NA
+
+### `Arreglo_extent.R`
+Tiene el log para asignar el extent correcto a los modelos.
+
+> Modelos a los que se le corrigiÛ el extent mediante el script `Arreglo_extent.R`:
+
+* Zamia amazonum: el archivo resultante es **Zamia_amazonum_con4.tif**.
+
+* Zamia hymenophyllidia: el archivo resultante es **Zamia_hymenophyllidia_con3.tif**.
 
 ###//192.168.11.113/Lab_biogeografia2/Modelos/Zamias/Nivel2
 Modelos Nivel 2 procesados a partir de los modelos consenso y vegMasks, generadas a partir de la informaci√≥n en `Estado modelamiento Zamias2.xlsx` pesta√±a, Variables ecol√≥gicas.

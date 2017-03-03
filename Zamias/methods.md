@@ -26,29 +26,29 @@ Los métodos de modelamiento empleados para cada especie son:
 
 Especie|Método
 -------|------
-Zamia amazonum | Maxent
-Zamia amplifolia | Maxent
-Zamia chigua | Maxent
-Zamia disodon| Maxent
-Zamia encephalartoides | Maxent
-Zamia huilensis | Maxent
-Zamia hymenophyllidia | Maxent
-Zamia incognita | Maxent
-Zamia manicata | Maxent
-Zamia melanorrhachis | Maxent
-Zamia montana | Convex Hull
-Zamia muricata | Bioclim
-Zamia obliqua | Maxent
-Zamia oligodonta | Convex Hull
-Zamia pyrophylla | Maxent
-Zamia restrepoi | Convex Hull
-Zamia roezlii | Maxent
-Zamia tolimensis | Maxent
-Zamia ulei | Maxent
-Zamia wallisii | Convex Hull
+*Zamia amazonum* | Maxent
+*Zamia amplifolia* | Maxent
+*Zamia chigua* | Maxent
+*Zamia disodon*| Maxent
+*Zamia encephalartoides* | Maxent
+*Zamia huilensis* | Maxent
+*Zamia hymenophyllidia* | Maxent
+*Zamia incognita* | Maxent
+*Zamia manicata* | Maxent
+*Zamia melanorrhachis* | Maxent
+*Zamia montana* | Convex Hull
+*Zamia muricata* | Bioclim
+*Zamia obliqua* | Maxent
+*Zamia oligodonta* | Convex Hull
+*Zamia pyrophylla* | Maxent
+*Zamia restrepoi* | Convex Hull
+*Zamia roezlii* | Maxent
+*Zamia tolimensis* | Maxent
+*Zamia ulei* | Maxent
+*Zamia wallisii* | Convex Hull
 
 ##Aportes expertos
-En conjunto con Cristina López-Gallego y también Dairon Cárdenas en el caso de Z. amazonum, Z. hymenophyllidia y Z. ulei se definieron los métodos de modelamiento, umbrales y  ediciones pertinentes para cada especie. Este es un resumen de las ediciones incorporadas
+En conjunto con Cristina López-Gallego y también Dairon Cárdenas en el caso de *Z. amazonum*, *Z. hymenophyllidia* y *Z. ulei* se definieron los métodos de modelamiento, umbrales y  ediciones pertinentes para cada especie. Este es un resumen de las ediciones incorporadas
 
 Especie|Método|Umbral|Ediciones
 -------|------|------|---------

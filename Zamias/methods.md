@@ -76,7 +76,7 @@ Especie|Método|Umbral|Ediciones
 Los polígonos de recorte fueron generados desplegando los modelos en ArcGIS. Las ediciones para la mayoría de modelos fueron realizadas en R y el historial de procesamiento se encuentra en `Zamias_processing.R`, aunque algunas se hicieron en ArcGIS como es descrito en el readme de este repositorio.
 
 ##Recorte modelos por coberturas terrestres
-Cada modelo consenso, es decir, que incorpora los aportes de experto(s) fue recortado por las coberturas terrestres apropiadas para cada especie para producir modelos nivel 2. Las coberturas consideradas siguieron la leyenda del mapa de IDEAM et al 2012 [^1]. En estos modelos nivel 2, un pixel obtiene un valor de 1 siempre y cuando su valor sea de 1 en el modelo consenso Y contenga un área > 0 apropiada para la especie.
+Cada modelo consenso, es decir, que incorpora los aportes de experto(s) fue recortado por las coberturas terrestres apropiadas para cada especie para producir modelos nivel 2. Las coberturas consideradas siguieron la leyenda del mapa de IDEAM et al 2012^1^. En estos modelos nivel 2, un pixel obtiene un valor de 1 siempre y cuando su valor sea de 1 en el modelo consenso Y contenga un área > 0 apropiada para la especie.
 
 Las coberturas consideradas como apropiadas para cada especie fueron:
 
@@ -105,4 +105,4 @@ Especie|3.1.1. Bosque denso|3.1.3. Bosque fragmentado
 
 Finalmente, los modelos consenso (nivel 1 y nivel 2), fueron evaluados usando las métricas omisión, true skill statistic y el valor p de un test binomial usando todas las presencias disponibles para cada especie en Colombia. Estas estadísticas y las de los modelos originales se encuentran disponibles en el archivo `metadata.csv`.
 
-[^1]: IDEAM, MADS, IGAC, IIAP, SINCHI, PNN Y WWF. 2012. Capa Nacional de Cobertura de la Tierra (periodo 2005-2009): Metodología CORINE Land Cover adaptada para Colombia escala 1:100000, V1.0
+^1^ IDEAM, MADS, IGAC, IIAP, SINCHI, PNN Y WWF. 2012. Capa Nacional de Cobertura de la Tierra (periodo 2005-2009): Metodología CORINE Land Cover adaptada para Colombia escala 1:100000, V1.0

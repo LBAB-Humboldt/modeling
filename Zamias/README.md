@@ -59,3 +59,7 @@ Tiene el log de procesamiento de los aportes de experto.
 ### Estado modelamiento Zamias2.xlsx
 Archivo con el estado general de procesamiento
 
+###`convert2PNG_zamias.R`
+Tiene el log de procesamiento para convertir los archivos .tif (consenso y nivel 2) de los modelos a archivos .png que son publicados a través de BioModelos.
+
+### //192.168.11.113/Lab_biogeografia2/BioModelos/Zamias_2016/Consenso

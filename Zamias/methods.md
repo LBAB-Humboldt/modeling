@@ -24,8 +24,8 @@ El script con el flujo de trabajo de modelamiento se encuentra disponible en htt
 ##Resultados modelamiento
 Los métodos de modelamiento empleados para cada especie son: 
 
-Especie | Método
-- | -
+Especie|Método
+-------|------
 Zamia amazonum | Maxent
 Zamia amplifolia | Maxent
 Zamia chigua | Maxent

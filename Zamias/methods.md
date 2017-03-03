@@ -4,7 +4,7 @@
 Los registros empleados en el modelamiento de las 20 especies de Zamias que ocurren en el territorio continental colombiano  fueron provistos por la moderadora del grupo biomodelos de Zamias y han sido revisados taxonómica y geográficamente para asegurar su calidad. Para el modelamiento se ignoraron los registros a menos de 1.41 km entre si.
 
 ##Capas ambientales
-Se utilizaron las capas "bio_1", "bio_2", "bio_3", "bio_4", "bio_12", "bio_15" y "bio_18" provenientes de la versión 2 (beta) de WorldClim http://worldclim.org/version2.
+Se utilizaron las capas bio_1, bio_2, bio_3, bio_4, bio_12, bio_15 y bio_18 provenientes de la versión 2 (beta) de WorldClim http://worldclim.org/version2.
 
 ##Área de estudio
 El área de estudio comprende la ventana -83, -60, -14, 13  (xmin, xmax, ymin, ymax).
@@ -19,7 +19,7 @@ En Maxent se utilizó clamping y se consideraron features de tipo lineal, cuadr�
 
 A partir de los modelos continuos se generaron 4 modelos binarios usando como umbrales los percentiles 0, 10, 20 y 30 de las idoneidades de los registros empleados en el desarrollo del modelo. Cada modelo binario fue validado independientemente usando una validación cruzada de 5 folds y True Skill Statistic como estadístico de desempeño.
 
-El script con el flujo de trabajo de modelamiento se encuentra disponible en https://github.com/LBAB-Humboldt/BMModelWF/blob/master/modelingWorkflow.R
+El script con el flujo de trabajo de modelamiento se encuentra disponible en https://github.com/LBAB-Humboldt/BMModelWF/blob/master/modelingWorkflow.R. El log como tal de la ejecución del script esta en el archivo `21112016_Zamias.R` de este repositorio.
 
 ##Resultados modelamiento
 Los métodos de modelamiento empleados para cada especie son: 
@@ -73,4 +73,36 @@ Especie|Método|Umbral|Ediciones
 *Zamia ulei*|Maxent|0|Recortar por eoo
 *Zamia wallisii*|Buffer 50km|NA|Retener elevaciones entre 900-1500m.
 
-Los polígonos de recorte fueron generados desplegando los modelos en ArcGIS.
+Los polígonos de recorte fueron generados desplegando los modelos en ArcGIS. Las ediciones para la mayoría de modelos fueron realizadas en R y el historial de procesamiento se encuentra en `Zamias_processing.R`, aunque algunas se hicieron en ArcGIS como es descrito en el readme de este repositorio.
+
+##Recorte modelos por coberturas terrestres
+Cada modelo consenso, es decir, que incorpora los aportes de experto(s) fue recortado por las coberturas terrestres apropiadas para cada especie para producir modelos nivel 2. Las coberturas consideradas siguieron la leyenda del mapa de IDEAM et al 2012 [^1]. En estos modelos nivel 2, un pixel obtiene un valor de 1 siempre y cuando su valor sea de 1 en el modelo consenso Y contenga un área > 0 apropiada para la especie.
+
+Las coberturas consideradas como apropiadas para cada especie fueron:
+
+Especie|3.1.1. Bosque denso|3.1.3. Bosque fragmentado
+-------|-------------------|-------------------------
+*Zamia amazonum*|si|no
+*Zamia amplifolia*|si|no
+*Zamia chigua*|si|si
+*Zamia disodon*|si|si
+*Zamia encephalartoides*|si|si
+*Zamia hulensis*|si|si
+*Zamia hymenophyllidia*|si|no
+*Zamia incognita*|si|si
+*Zamia manicata*|si|no
+*Zamia melanorrhachis*|si|si
+*Zamia montana*|si|si
+*Zamia muricata*|si|no
+*Zamia obliqua*|si|no
+*Zamia oligodonta*|si|si
+*Zamia pyrophylla*|si|no
+*Zamia restrepoi*|si|si
+*Zamia roezlii*|si|no
+*Zamia tolimensis*|si|si
+*Zamia ulei*|si|no
+*Zamia wallissi*|si|si
+
+Finalmente, los modelos consenso (nivel 1 y nivel 2), fueron evaluados usando las métricas omisión, true skill statistic y el valor p de un test binomial usando todas las presencias disponibles para cada especie en Colombia. Estas estadísticas y las de los modelos originales se encuentran disponibles en el archivo `metadata.csv`.
+
+[^1]: IDEAM, MADS, IGAC, IIAP, SINCHI, PNN Y WWF. 2012. Capa Nacional de Cobertura de la Tierra (periodo 2005-2009): Metodología CORINE Land Cover adaptada para Colombia escala 1:100000, V1.0

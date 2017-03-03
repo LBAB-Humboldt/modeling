@@ -1,4 +1,4 @@
-#Métodos empleados para el modelamiento de Zamias
+﻿#Métodos empleados para el modelamiento de Zamias
 
 ##Registros
 Los registros empleados en el modelamiento de las 20 especies de Zamias que ocurren en el territorio continental colombiano  fueron provistos por la moderadora del grupo biomodelos de Zamias y han sido revisados taxonómica y geográficamente para asegurar su calidad. Para el modelamiento se ignoraron los registros a menos de 1.41 km entre si.
